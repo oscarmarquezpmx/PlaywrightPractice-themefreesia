@@ -9,7 +9,7 @@ export class ThemefreesiaHome {
     readonly contactUsLink: Locator;
     readonly homeLogoImage: Locator;
 
-    readonly sportItems: Locator;
+    readonly items: Locator;
 
     constructor(page: Page) {
         this.homeLink = page.locator(".dashicons-admin-home");
@@ -18,7 +18,7 @@ export class ThemefreesiaHome {
         this.homeLogoImage = page.getByRole('link', { name: ' Home ' });
         this.blogLink = page.getByRole('link', { name: ' Blog' });
         this.contactUsLink = page.getByRole('link', { name: ' Contact Us' });
-        this.sportItems = page.getByRole('link', { name: 'Sports' }).nth(1);
+        this.items = page.getByRole('link', { name: 'Sports' }).nth(1);
     }
 
     async getStarted() {
