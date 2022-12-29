@@ -73,7 +73,7 @@ test.describe(' Homepage Test', () => {
         await expect(searchResult.thumbImage).toBeVisible();
         await expect(searchResult.thumbText).toBeVisible();
         await expect(searchResult.thumbPrice).toBeVisible();
-        await expect(searchResult.thumbPriceOriginal).toBeVisible();  //optional validation
+        //await expect(searchResult.thumbPriceOriginal).toBeVisible();  //optional validation
         await expect(searchResult.thumbAddToCart).toBeVisible();
 
 
@@ -110,7 +110,7 @@ test.describe(' Homepage Test', () => {
         await expect(searchResult2.thumbImage).toBeVisible();
         await expect(searchResult2.thumbText).toBeVisible();
         await expect(searchResult2.thumbPrice).toBeVisible();
-        await expect(searchResult2.thumbPriceOriginal).toBeVisible();  //optional validation
+        //await expect(searchResult2.thumbPriceOriginal).toBeVisible();  //optional validation
         await expect(searchResult2.thumbAddToCart).toBeVisible();
     });
 
@@ -136,5 +136,23 @@ test.describe(' Homepage Test', () => {
         await expect(paymentOption3.paymentOption).toBeVisible();
 
     })
+
+    test("Verify the All Products Menu in the Homepage", async ({ page }) => {
+
+        await freesiaHome.allProductsSelectMenu(page, "Deals of the Day");
+        expect(page).toHaveTitle("Patek Eleven - Shopping Cart");
+        await page.goBack();
+        await freesiaHome.allProductsSelectMenu(page, "Consumer Electronics");
+        await freesiaHome.allProductsSelectSubMenu2(page, "Video");
+        await freesiaHome.allProductsSelectSubMenu3(page, "Patek Eleven");
+        expect(page).toHaveTitle("Patek Eleven - Shopping Cart");
+        await page.goBack();
+
+        //  await freesiaHome.allProductsSelectMenu(page, "Sports & Health");
+        //  await freesiaHome.allProductsSelectMenu(page, "Babies & Toys");
+
+
+    })
+
 
 });

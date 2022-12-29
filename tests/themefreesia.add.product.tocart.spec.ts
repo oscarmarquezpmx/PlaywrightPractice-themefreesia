@@ -15,8 +15,8 @@ test.describe(' Homepage Test', () => {
         homeheader = new HomePageHeader(page);
 
         await page.goto("https://demo.themefreesia.com/shoppingcart/");
-
-        await freesiaHome.getStarted();
+        await expect(freesiaHome.homeLogoImage).toBeVisible();
+        //await freesiaHome.getStarted();
 
 
     });
@@ -45,6 +45,8 @@ test.describe(' Homepage Test', () => {
         await expect(await homeheader.getWishListCount(page, expectedWishCounter)).toEqual(expectedWishCounter);
 
     });
+
+
 
 
 });

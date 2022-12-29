@@ -1,4 +1,4 @@
-import { expect, Locator, LocatorScreenshotOptions, Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 
 
 export class ThemefreesiaHome {
@@ -10,6 +10,7 @@ export class ThemefreesiaHome {
     readonly blogLink: Locator;
     readonly contactUsLink: Locator;
     readonly homeLogoImage: Locator;
+
 
 
     readonly items: Locator;
@@ -24,6 +25,8 @@ export class ThemefreesiaHome {
     readonly megaMenuFurniture: Locator;
     readonly megaMenuGlasses: Locator;
 
+    // All Products Menu
+    readonly allProductsOptionLevel1: Locator;
 
     constructor(page: Page) {
 
@@ -48,14 +51,27 @@ export class ThemefreesiaHome {
         this.megaMenuFurniture = page.locator(".mega-menu-title >> text=Furniture")
         this.megaMenuGlasses = page.locator(".mega-menu-title >> text=Glasses")
 
+    }
+
+    async allProductsSelectMenu(page: Page, menuOption: string): Promise<void> {
+
+        let menu_option = page.locator(`//div[3]/div/div/div[1]/div/nav/div/ul/li/a[contains(text(), '${menuOption}')]`);
+        await menu_option.click();
 
     }
 
-    async getStarted() {
-        await expect(this.homeLogoImage).toBeVisible();
+    async allProductsSelectSubMenu2(page: Page, menuOption: string): Promise<void> {
+
+        let menu_option = page.locator(`//div[3]/div/div/div[1]/div/nav/div/ul/li/ul/li/a[contains(text(), '${menuOption}')]`);
+        await menu_option.click();
+
     }
 
+    async allProductsSelectSubMenu3(page: Page, menuOption: string): Promise<void> {
 
+        let menu_option = page.locator(`//div[3]/div/div/div[1]/div/nav/div/ul/li/ul/li/ul/li/a[contains(text(), '${menuOption}')]`);
+        await menu_option.click();
 
+    }
 
 }
