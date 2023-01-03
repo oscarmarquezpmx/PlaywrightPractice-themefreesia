@@ -1,8 +1,8 @@
-/**
-* TODO: validate the scolling thumbnail in the homepage
-* TODO: validate best selling and products thumbnail rows
-* TODO: create a user account and login
-*/
+
+// TODO: validate the scolling thumbnail in the homepage
+// TODO: validate best selling and products thumbnail rows
+// TODO: create a user account and login
+
 
 import { test, expect } from '@playwright/test';
 import { ThemefreesiaHome } from '../pages/themefreesia.home.page';
@@ -10,7 +10,6 @@ import { HomePageHeader } from '../pages/themefreesia.homeheader.page';
 import { SearchPage } from '../pages/themefreesia.searchresults.page';
 import { ProductCategoryPage } from '../pages/themefreesia.productcategory.page';
 import { HomePageFooter } from "../pages/themefreesia.homefooter.page";
-
 
 
 test.describe(' Homepage Test', () => {
