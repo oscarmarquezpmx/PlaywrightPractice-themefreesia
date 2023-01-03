@@ -1,3 +1,9 @@
+/**
+* TODO: validate the scolling thumbnail in the homepage
+* TODO: validate best selling and products thumbnail rows
+* TODO: create a user account and login
+*/
+
 import { test, expect } from '@playwright/test';
 import { ThemefreesiaHome } from '../pages/themefreesia.home.page';
 import { HomePageHeader } from '../pages/themefreesia.homeheader.page';
@@ -147,11 +153,6 @@ test.describe(' Homepage Test', () => {
         await freesiaHome.allProductsSelectSubMenu3(page, "Patek Eleven");
         expect(page).toHaveTitle("Patek Eleven - Shopping Cart");
         await page.goBack();
-
-        //  await freesiaHome.allProductsSelectMenu(page, "Sports & Health");
-        //  await freesiaHome.allProductsSelectMenu(page, "Babies & Toys");
-
-
     })
 
 

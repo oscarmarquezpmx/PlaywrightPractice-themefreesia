@@ -45,8 +45,4 @@ test.describe(' Homepage Test', () => {
         await expect(await homeheader.getWishListCount(page, expectedWishCounter)).toEqual(expectedWishCounter);
 
     });
-
-
-
-
 });
